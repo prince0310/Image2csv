@@ -16,7 +16,7 @@ def createfilelist(mydir, fotmat = ".jpg" ):
         
     return filelist
 
-myFilelist = createfilelist("/home/prince/dataset/AbNormal")
+myFilelist = createfilelist("/home/prince/dataset/AbNormal")              #path of files 
 
 for file in myFilelist:
     print(file)
@@ -29,12 +29,7 @@ for file in myFilelist:
     value = np.asarray(img_grey.getdata(),dtype=np.int).reshape((img_grey.size[1],img_grey.size[0]))
     value = value.flatten()
     print(value)
-    with open("image_to_csv.csv","a") as f :
+    with open("image_to_csv.csv","a") as f :               #name of csv file
         writer = csv.writer(f)
         writer.writerow(value)
 
-
-# img  = cv.imread("/home/prince/dataset/AbNormal/HPT_1.jpg")
-# cv.imshow("image",img)
-# cv.waitKey(0)
-# 
